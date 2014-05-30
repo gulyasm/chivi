@@ -1,5 +1,21 @@
 http = require('http');
 fs = require('fs');
+var argv = require('minimist')(process.argv.slice(2));
+
+function validParameters() {
+	return argv.port;
+}
+
+function usage() {
+	console.log("Usage: npm start --port 12001");
+}
+
+
+var port = argv.port;
+if(!validParameters()) {
+	usage();
+	return;
+}
 server = http.createServer( function(req, res) {
     if (req.method == 'POST') {
     	console.log('POST: ' + req.url);
@@ -24,7 +40,6 @@ server = http.createServer( function(req, res) {
 
 });
 
-port = 12001;
-host = '127.0.0.1';
+var host = '127.0.0.1';
 server.listen(port, host);
 console.log('Listening at http://' + host + ':' + port);

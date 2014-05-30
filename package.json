@@ -1,12 +1,9 @@
 {
-    "name": "Chivi",
-    "description": "Echoing http server for debug purposes",
-    "version": "0.0.1",
-    "scripts": {
-        "start": "node app.js"
-    },
-    "dependencies": {
-    },
-    "devDependencies": {
-    }
+  "name": "Chivi",
+  "description": "Echoing http server for debug purposes",
+  "version": "0.0.1",
+  "dependencies": {
+    "minimist": "^0.1.0"
+  },
+  "devDependencies": {}
 }
