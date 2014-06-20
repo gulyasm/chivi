@@ -5,5 +5,8 @@
   "dependencies": {
     "minimist": "^0.1.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "config": {
+      "port": 1200
+  }
 }

@@ -2,19 +2,9 @@ http = require('http');
 fs = require('fs');
 var argv = require('minimist')(process.argv.slice(2));
 
-function validParameters() {
-	return argv.port;
-}
-
-function usage() {
-	console.log("Usage: npm start --port 12001");
-}
-
-
 var port = argv.port;
-if(!validParameters()) {
-	usage();
-	return;
+if(!port) {
+    var port = process.env.npm_package_config_port || 12001;
 }
 server = http.createServer( function(req, res) {
     if (req.method == 'POST') {
